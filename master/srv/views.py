@@ -20,3 +20,16 @@ class TaskListView(APIView):
 
     def get_serializer(self):
         return TaskListSerializer()
+
+class TaskCreateView(APIView):
+
+    def post(self, request):
+        task = TaskCreateSerializer(data=request.data)
+        if task.is_valid():
+            task.save()
+            return Response(status=201)
+        else:
+            return Response(status=400)
+
+    def get_serializer(self):
+        return TaskCreateSerializer()
