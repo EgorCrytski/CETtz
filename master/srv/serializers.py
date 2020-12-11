@@ -17,6 +17,10 @@ class TaskCreateSerializer(serializers.ModelSerializer):
             raise ValueException(detail={"Error": "Non integer value"}, status_code=status.HTTP_400_BAD_REQUEST)
         return input
 
+class TaskCompleteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ('id', 'output',)
 
 class TaskListSerializer(serializers.ModelSerializer):
     class Meta:

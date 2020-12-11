@@ -8,10 +8,12 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-pillow = "*"
 psycopg2 = "*"
 requests = "*"
 drf-yasg = "*"
+flask = "*"
+flask-script = "*"
+celery = "*"
 
 [requires]
 python_version = "3.7"
